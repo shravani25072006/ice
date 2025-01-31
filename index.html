@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ice Cream Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get Random Fact</button>
+    </div>
+    <script>
+        const iceCreamFacts = [
+            {
+                "fact": "Ancient Origins",
+                "description": "The origins of ice cream can be traced back to ancient China, where a mixture of milk and rice was packed in snow to create a frozen dessert."
+            },
+            {
+                "fact": "First Ice Cream Parlor",
+                "description": "The first ice cream parlor in the United States opened in New York City in 1776."
+            },
+            {
+                "fact": "Popular Flavors",
+                "description": "Vanilla is the most popular ice cream flavor in the United States, followed by chocolate and strawberry."
+            },
+            {
+                "fact": "Ice Cream Production",
+                "description": "The United States produces over 1.5 billion gallons of ice cream each year."
+            },
+            {
+                "fact": "World Record",
+                "description": "The largest ice cream cake ever made weighed over 12,000 pounds and was created in 2011 in Canada."
+            },
+            {
+                "fact": "Ice Cream Cone",
+                "description": "The ice cream cone was popularized at the 1904 World's Fair in St. Louis, Missouri, when a vendor ran out of bowls and used waffle cones instead."
+            },
+            {
+                "fact": "Brain Freeze",
+                "description": "The phenomenon known as 'brain freeze' occurs when something cold touches the roof of your mouth, causing blood vessels in the head to constrict and then rapidly dilate."
+            },
+            {
+                "fact": "Ice Cream Sundae",
+                "description": "The ice cream sundae was invented in the late 19th century, and there are several stories about its origin, including one that claims it was created to circumvent laws against serving soda on Sundays."
+            },
+            {
+                "fact": "Gelato vs. Ice Cream",
+                "description": "Gelato contains less air and fat than traditional ice cream, making it denser and creamier."
+            },
+            {
+                "fact": "National Ice Cream Month",
+                "description": "July is celebrated as National Ice Cream Month in the United States, as declared by President Ronald Reagan in 1984."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * iceCreamFacts.length);
+            const fact = iceCreamFacts[randomIndex];
+            document.getElementById('fact').innerText = `${fact.fact}: ${fact.description}`;
+        });
+    </script>
+</body>
+</html>
